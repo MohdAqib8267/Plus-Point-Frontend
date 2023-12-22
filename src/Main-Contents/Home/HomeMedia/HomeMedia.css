@@ -1,0 +1,207 @@
+.main-homeMedia{
+    width: 100%;
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+.main-homeMedia h1{
+    color: #111;
+    font-family: Poppins;
+    font-size: 3.125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 4.0625rem */
+}
+.main-homeMedia p{
+    width: 75%;
+    color: var(--neutral-600, #525252);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 1.375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2rem; /* 145.455% */
+}
+.homeMedia-btn{
+    width: 9.375rem;
+    height: 3.125rem;
+    flex-shrink: 0;
+    background: #4C341F;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-family: Proxima Nova;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+    text-align: center;
+}
+.homeMedia-content{
+    width: 98vw;
+    height: 55vw;
+    position: relative;
+    margin-top: 2vw;
+}
+.homeMedia-content > *{
+    border-radius: 20px;
+    transition: all 1s ease;
+}
+.homeMedia-content > *:hover{
+    scale: 1.1;
+}
+.homeMedia-1{
+    position: absolute;
+    width: 15vw;
+    height: 20vw;
+    flex-shrink: 0;
+    top: 0;
+    left: 18vw;
+    z-index: 99;
+}
+.homeMedia-2{
+    position: absolute;
+    width: 24vw;
+    height: 15vw;
+    flex-shrink: 0;
+    bottom: 6vw;
+    left: 17vw;
+    z-index: 99;
+}
+.homeMedia-3{
+    position: absolute;
+    width: 24vw;
+    height: 15vw;
+    flex-shrink: 0;
+    right: 17vw;
+    z-index: 99;
+    top: 0;
+}
+.homeMedia-4{
+    position: absolute;
+    width: 15vw;
+    height: 20vw;
+    flex-shrink: 0;
+    bottom: 6vw;
+    right: 17vw;
+    z-index: 99;
+}
+.homeMedia-5{
+    position: absolute;
+    top: 6vw;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30vw;
+    height: 33vw;
+    flex-shrink: 0;
+    margin: 0 10px;
+}
+
+/* Responsiveness --------------------------> */
+/* @media screen and (max-width:1400px) {
+    .main-homeMedia h1{
+        font-size: 2.5rem;
+    }
+    .main-homeMedia p{
+        font-size: 1.1rem;
+    }
+   
+} */
+@media screen and (max-width:789px) {
+    .main-homeMedia{
+        gap: 20px;
+    }
+    .main-homeMedia h1{
+        font-size: 2rem;
+    }
+    .main-homeMedia p{
+        font-size: 0.8rem;
+    }
+    .homeMedia-btn{
+        width: 7rem;
+        height: 2.5rem;
+        font-size: 0.8rem;
+    }
+    .homeMedia-content{
+        height: 50rem !important;
+    }
+    .homeMedia-5{
+        top: 0;
+        width: 80%;
+        height: 25rem;
+    }
+    .homeMedia-2,.homeMedia-3{
+        display: none;
+    }
+    .homeMedia-1{
+        top: 30rem !important;
+        width: 35%;
+        height: 20rem;
+        left:10vw;
+    }
+    .homeMedia-4{
+        bottom: 0;
+        width: 35%;
+        height: 20rem;
+        right:10vw;
+    }
+}
+@media screen and (max-width:480px) {
+    .main-homeMedia{
+        gap: 20px;
+        align-items: flex-start;
+        position: relative;
+    }
+    .main-homeMedia h1{
+        font-size: 1.5rem;
+    }
+    .main-homeMedia p{
+        width: 100%;
+        font-size: 1rem;
+        text-align: left;
+    }
+    .homeMedia-btn{
+        width: 5rem;
+        height: 2rem;
+        font-size: 0.75rem;
+        margin-bottom: 20px;
+        position: absolute;
+        bottom: -69px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .homeMedia-content{
+        width: 90vw;
+        height: 43rem !important;
+    }
+    .homeMedia-content > *{
+        border-radius: 10px;
+    }
+    .homeMedia-5{
+        top: 0;
+        width: 90%;
+        height: 25rem;
+        left: 37vw;
+    }
+    .homeMedia-2,.homeMedia-3{
+        display: none;
+    }
+    .homeMedia-1{
+        top: 28rem !important;
+        width: 40%;
+        height: 15rem;
+        left:1vw;
+    }
+    .homeMedia-4{
+        bottom: 0;
+        width: 40%;
+        height: 15rem;
+        right:9vw;
+    }
+}

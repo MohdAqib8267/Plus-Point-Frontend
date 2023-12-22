@@ -1,0 +1,199 @@
+.our-team-main{
+    width: 100%;
+    position: relative;
+    top: 8rem;
+    margin-bottom: 8rem;
+}
+.our-team-banner{
+    width: 100vw;
+    max-height: fit-content;
+    position: relative;
+}
+.our-team-banner-img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.our-team-banner-grade{
+    position: absolute;
+    bottom: 0;
+   width: 100%;
+   height: 45%;
+   background: linear-gradient(0deg, black, transparent);
+}
+.our-team-banner-title{
+    position: absolute;
+    bottom: 2rem;
+    left: 8rem;
+    width: 45%;
+    color: #FFFCC8;
+    font-family: Poppins;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 5rem; /* 123.077% */
+    text-align: left;
+}
+.our-team-content{
+    width: 100%;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+}
+.our-team-content-1{
+    width: 100%;
+    height: 20rem;
+    padding: 0 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+}
+.our-team-content-1 h5{
+    color: #4C341F;
+    font-family: Poppins;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+.our-team-content-1 h3{
+    color: #1F1F1F;
+    font-family: Poppins;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 3.75rem;
+}
+.our-team-content-2{
+    padding: 0 5rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+.our-team-content-3{
+    width: 100%;
+    height: 40rem;
+    margin-top: 2rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.out-team-content-3-img{
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+}
+.our-team-content-3-para{
+    position: absolute;
+    width: 70%;
+    color: #B5865E;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 5.75rem; /* 115% */
+}
+
+/* Responsiveness -------------> */
+@media screen and (min-width:1921px) {
+    .our-team-main{      
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    .our-team-banner-title{
+        width: 50rem;
+    }
+ .our-team-content{
+    max-width: 1920px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .our-team-content-2{
+    padding: 0;
+ }
+ .our-team-content-3-para{
+    max-width: 1920px;
+ }
+}
+@media screen and (max-width:1400px) {
+    .our-team-main{
+        top: 6rem;
+    }
+    /* .our-team-content{
+        padding: 0 4.5rem;
+    }
+    .our-team-content-3-para{
+        font-size: 3rem;
+    } */
+}
+@media screen and (max-width:1024px) {
+    .our-team-content-2{
+        padding: 0 3rem;
+    }
+}
+@media screen and (max-width:768px) {
+    .our-team-content-1,.our-team-content-2{
+        padding: 0 5rem;
+    }
+    .our-team-content-2{
+        flex-direction: column;
+    }
+    .our-team-banner-title{
+        width: 50% !important;
+        font-size: 2rem;
+    }
+    .our-team-content-3{
+        height: 30rem;
+    }
+    .our-team-content-3-para{
+        font-size: 2rem;
+        line-height: 4rem;
+    }
+    .our-team-content-1 h3{
+        font-size: 2.5rem;
+    }
+}
+@media screen and (max-width:480px) {
+    .our-team-content-1,.our-team-content-2{
+        padding: 0;
+    }
+    .our-team-banner{
+        height: 18rem;   
+    }
+    .our-team-banner-title{
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+        left: 2rem;
+        width: 70% !important;
+    }
+    .our-team-content{
+        padding: 0 2rem;
+    }
+    .our-team-content-1{
+        margin-left: 10px;
+        height: 10rem;
+    }
+    .our-team-content-1 h3{
+        font-size: 1.5rem;
+        line-height: 1.5rem
+    }
+    .our-team-content-1 h5{
+        font-size: 0.75rem;
+    }
+    .our-team-content-3{
+        height: 20rem;
+    }
+    .our-team-content-3-para{
+        font-size: 1.317rem;
+        line-height: 1.9rem;
+    }
+}

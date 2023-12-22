@@ -1,0 +1,56 @@
+.main-homeCard{
+    width: calc(32% - 20px);
+    min-height: 24rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding:2rem;
+    padding-top: 0; 
+    border-radius: 0.9375rem;
+    border: 1px solid #000;
+     /* box-shadow: 0px 7px 14px 0px rgba(0, 0, 0, 0.20); */
+    cursor: pointer;
+    transition: all 1s ease;
+}
+.main-homeCard:hover{
+    background-color: #4C341F;
+}
+.main-homeCard:hover > *{
+    color: white !important;
+}
+.homeCard-img{
+    width: 20%;
+}
+.homeCard-title{
+    color: #131212;
+    font-family: Poppins;
+    font-size: 2.5rem !important;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+}
+.homeCard-info{
+    color: #1F1F1F;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.75rem; /* 155.556% */
+}
+
+
+/* Responsiveness ------------>>>>>>>>>>>>>>>>> */
+@media screen and (max-width:480px){
+    .homeCard-title{
+        font-size: 1.5rem !important;
+    }
+    .homeCard-info{
+        font-size: 1rem !important;
+    }
+    .main-homeCard{
+        width: 100% !important;
+    }
+}

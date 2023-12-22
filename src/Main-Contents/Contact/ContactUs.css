@@ -1,0 +1,122 @@
+.m-main-contact{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-contact{
+    width: 100%;
+    position: relative;
+    top: 8rem;
+    padding: 5rem 0;
+}
+.contact-title{
+    color: #4C341F;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 4.375rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%; /* 4.375rem */
+}
+.contact-info{
+    color: var(--black, #212121);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 1.375rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 2rem; /* 145.455% */
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.contact-link{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 2rem 0;
+}
+.contact-link-wrapper{
+    /* width: calc(20% - 20px); */
+    width: 22rem;
+    height: 15rem;
+    border-radius: 1.125rem;
+    border: 1.2px solid #0e0d0d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 3rem;
+}
+.contact-link-wrapper span{
+    color: var(--black, #212121);
+    font-family: Poppins;
+    font-size: 1.375rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 2rem; /* 145.455% */
+}
+.contact-content{
+    width: 100%;
+    /* height: 100vh; */
+    padding: 2rem 5rem;
+    margin-bottom: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* Responsiveness --------------> */
+@media screen and (min-width:1920px) {
+    .main-contact{
+        max-width: 1920px;
+    }
+}
+@media screen and (max-width:768px){
+    .main-contact{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem 0;
+    }
+    .contact-link-wrapper{
+        width: 15rem;
+        font-size: 2rem;
+    }
+    .contact-link-wrapper span{
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width:480px){
+    .contact-link-wrapper{
+        width: 20rem;
+        height: 12rem;
+        gap: 15px;
+        font-size: 2rem;
+    }
+    .contact-link-wrapper span{
+        font-size: 1.2rem;
+    }
+    .contact-title{
+        font-size: 3rem;
+    }
+    .contact-info{
+        width: 80%;
+    }
+    .contact-info p{
+        font-size: 1rem;
+    }
+    .contact-link{
+        flex-direction: column;
+    }
+}

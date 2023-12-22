@@ -1,0 +1,215 @@
+.main-home{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /* top: 8rem; */
+    scroll-behavior: smooth;
+    margin-bottom: 70px;
+}
+/* ::-webkit-scrollbar{
+    display: none;
+} */
+.home-top-banner{
+    width: 100%;
+    /* max-height: fit-content; */
+}
+.home-top-banner img{
+    width: 100%;
+    height: 30rem;
+    animation: top-banner 2s ease;
+}
+@keyframes top-banner{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+}
+.home-banner{
+    margin-top: -10px;
+    width: 100%;
+    height: 121rem;
+    background: url('../../images/home-banner.png');
+    background-size: 100%;
+    padding: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow-x: hidden;
+}
+.home-banner h1{
+    color: #E8CD9C;
+    text-align: center;
+    font-family: Plantagenet Cherokee;
+    font-size: 4.375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 5.625rem;
+}
+.home-banner h2,.home-banner h3,.home-banner h4{
+    color: #E8CD9C;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 3.125rem;
+}
+.home-content{
+     width: 100%;
+     min-height: 100rem;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     align-items: center;
+     overflow: hidden;
+}
+.home-content-1{
+    width: 100%;
+    background-color:#FFFCC8;
+    padding: 10rem 8rem;
+}
+.home-content-1-wp{
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+.home-content-1 h1{
+    color: #4C341F;
+    font-family: Poppins;
+    font-size: 4.375rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 5.6875rem */
+}
+.home-content-1-wrapper{
+    width: 100%;
+    min-height: 30rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    /* gap: 5%; */
+}
+.home-content-2,.home-content-4,.home-content-6{
+    width: 100%;
+    padding: 3rem 8rem;
+}
+.home-content-5{
+    padding: 0.5rem 8rem;
+}
+.home-content-3{
+    width: 100%;
+    padding: 5rem 8rem;
+    background: rgba(255, 252, 200, 0.50);
+}
+/* Responsivenesss -------------------> */
+@media screen and (min-width:1921px) {
+    .home-content-1,.home-content-2,.home-content-3,.home-content-4,.home-content-5,.home-content-6{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+@media screen and (max-width:1024px) {
+    .home-content-1,.home-content-2,.home-content-3,.home-content-4{
+        padding: 8rem 6rem;
+    }
+    .home-content-6,.home-content-5{
+        padding: 2rem 6rem;
+    }
+}
+
+.main-home>:nth-child(1){
+    display: none;
+}
+.main-home>:nth-child(2){
+    display: contents;
+}
+@media screen and (max-width:768px) {
+    .main-home{
+        top: 6rem;
+    }
+    .main-home>:nth-child(1){
+        display: contents;
+    }
+    .main-home>:nth-child(2){
+        display: none;
+    }
+    .home-top-banner{
+        height: 30rem !important;
+    }
+    .home-banner{
+        padding: 5rem !important;
+        height: 70rem !important;
+        overflow-y: hidden;
+    }
+    .home-banner h1{
+        font-size: 2rem !important;
+        line-height: 4.5rem;
+    }
+    .home-banner h2 , .home-banner h3, .home-banner h4{
+        font-size: 1.4rem;
+    }
+    .home-content-1-wp{
+        gap: 40px;
+    }
+    .home-content-1-wrapper{
+        flex-direction: column;
+        gap: 30px;
+    }
+    .main-homeCard{
+        width: 90%;
+    }
+    .home-content-1 h1{
+        font-size: 2.5rem;
+        margin-left: 2rem;
+    }
+    .home-content-3{
+        padding: 3rem 8rem !important;
+    }
+    .home-content-5{
+       padding: 3rem 6rem !important;
+    }
+}
+
+@media screen and (max-width:480px){
+    .home-top-banner{
+        height: 22rem !important;
+    }
+    .home-banner{
+        height: 60rem !important;
+        background-size: cover;
+    }
+    .home-banner h1 span{
+        font-size: 1.125rem;
+    }
+    .home-banner h2 , .home-banner h3, .home-banner h4{
+        font-size: 1rem;
+    }
+    .home-content-1,.home-content-2{
+        padding: 3rem;
+    }
+    .home-content-1-wp h1{
+        display: none;
+    }
+    .home-content-1-wrapper h1{
+        display: flex;
+        margin-left: 0 !important;
+    }
+    .home-content-3{
+        padding: 3rem !important;
+    }
+    .home-content-4{
+        padding: 3rem;
+    }
+    .home-content-5{
+        padding: 3rem !important;
+    }
+    .home-content-6{
+        padding: 2rem !important;
+    }
+}

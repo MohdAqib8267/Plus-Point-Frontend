@@ -1,0 +1,32 @@
+.Tm-exp{
+    display: flex;
+    position: absolute;
+    z-index: -1;
+    left: 20%;
+    height: 100%;
+}
+#timeline1-exp{
+    height: 95%;
+    width: 3px;
+}
+.wrapper-exp{
+    height: 100%;
+}
+
+@media screen and (max-width:768px) {
+    .Tm-exp{
+        left: 0;
+    }
+    #timeline1-exp{
+        width: 1px;
+        margin-right: 1rem;
+    }
+    .wrapper-exp{
+        height: 92%;
+    }
+}
+@media screen and (max-width:480px) {
+    .wrapper-exp {
+        height: 85%;
+    }
+}

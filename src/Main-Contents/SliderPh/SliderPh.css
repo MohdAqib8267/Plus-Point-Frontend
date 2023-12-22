@@ -1,0 +1,24 @@
+.sliderPh-container{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+}
+.slide1-ph{
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: left;
+}
+.t-cont{
+    display: flex;
+    gap: 1rem;
+}
+
+.s-y-ph{
+    font-size: 1.8rem;
+    color: #4C341F;
+    
+}
+.slide-timeline{
+    display: flex;
+}

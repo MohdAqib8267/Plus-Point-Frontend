@@ -1,0 +1,164 @@
+/* .welcome-image{
+    height: 80vh;
+}
+
+.w-pp{
+    display: flex;
+    margin-top: 2rem;
+    padding: 20px 50px;
+}
+.left-pp{
+    display: flex;
+    flex: 1 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+.right-pp{
+    display: flex;
+    flex: 1 1;
+    flex-direction: column;
+    gap: 1rem; 
+    text-align: justify;
+    justify-content: center;
+}
+
+.w-s{
+    display: flex;
+    /* width: 100vh; */
+    /* gap: 2rem;
+    overflow: auto; */
+/* }  */
+
+
+
+.welcome{
+  position: relative;
+  top: 8rem;
+}
+
+
+.welcome-image{
+  height: 80vh;
+  
+}
+.w-pp-center{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.w-pp{
+  display: flex;
+  margin-top: 2rem;
+  padding: 20px 50px;
+}
+.left-pp{
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+  justify-content: center;
+  
+  text-align: left;
+  padding: 0 0rem 0rem 4rem;
+}
+.right-pp{
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+  gap: 1rem; 
+  text-align: justify;
+  justify-content: center;
+}
+
+.w-s{
+  display: flex;
+  /* width: 100vh; */
+  gap: 2rem;
+  overflow: auto;
+}
+
+
+
+.wel-h{
+  font-size: 3rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+}
+.iso{
+  display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 3rem;
+    margin-bottom: 6rem;
+}
+.iso>:nth-child(1){
+  width: 15rem;
+}
+.iso>:nth-child(2){
+  width: 15rem;
+}
+/* .hide-btn>button{
+  padding: 6px 15px;
+  border-radius: 10px;
+  background: black;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  
+} */
+.hide-btn{
+  display: none
+}
+
+.container-welcome>:nth-child(2){
+  display: contents;
+}
+.container-welcome>:nth-child(3){
+  display: none;
+}
+
+
+@media screen and (min-width:769px) {
+  .w-h-11{
+    margin-top: -3rem;
+  }
+}
+
+  @media screen and (max-width:768px){
+    .w-pp{
+      flex-direction: column;
+      padding: 10px 25px;
+    }
+    .left-pp{
+      align-items: flex-start;
+      padding: 0;
+    }
+    .wel-h{
+      font-size: 2rem;
+    }
+    .container-welcome>:nth-child(2){
+      display: none;
+    }
+    .container-welcome>:nth-child(3){
+      display:flex;
+    }
+    .welcome-image{
+      height: 50vh;
+    }
+    .welcome{
+      top: 6rem;
+    }
+  }
+@media screen and (max-width:480px){
+  .iso{
+    scale: 0.8;
+    margin-right: 0.3rem;
+  }
+}
+
+
+
+
+

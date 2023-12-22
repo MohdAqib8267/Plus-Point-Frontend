@@ -1,0 +1,98 @@
+.our-team-card{
+    width: calc(50% - 60px);
+    /* width: 43rem; */
+    min-height: 60rem;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: Poppins;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+.our-team-card-img{
+    width: 100%;
+    height: 40rem;
+    
+}
+.our-team-card-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position:top;
+    border-radius: 10px;
+}
+.our-team-card-Tpost{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 2rem;
+}
+.our-team-card-name{
+    color: #1F1F1F;
+    font-family: Poppins;
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 90%; 
+}
+.our-team-card-post{
+    color: #1F1F1F;
+    font-family: Poppins;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3.75rem; /* 333.333% */
+}
+.our-team-card-info{
+    width: 100%;
+    min-height: 10rem;
+    color: rgba(31, 31, 31, 0.64);
+    font-family: Poppins;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.75rem; /* 155.556% */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+/* Responsiveness ->>>>>>>>>>>>>>>> */
+
+@media screen and (max-width:1400px) {
+    .our-team-card-name{
+        font-size: 1.3rem;
+    }
+    .our-team-card-post{
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width:768px) {
+    .our-team-card{
+        width: 100%;
+    }
+}
+@media screen and (max-width:480px) {
+    .our-team-card{
+        min-height: 30rem !important;
+        justify-content: center;
+        gap: 0 !important;
+    }
+    .our-team-card-img{
+        height: 20rem;
+    }
+    .our-team-card-info{
+        min-height: 5rem !important;
+    }
+    .our-team-card-name{
+        font-size: 1.2rem;
+    }
+    .our-team-card-post{
+        font-size: 0.8rem;
+    }
+    .our-team-card-info{
+        font-size: 1rem;
+    }
+}

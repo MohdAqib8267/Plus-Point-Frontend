@@ -1,0 +1,123 @@
+.main-homeNews{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem !important;
+}
+.homeNews-title{
+    color: #111;
+    font-family: Poppins;
+    font-size: 3.125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 110%; /* 3.4375rem */
+}
+.homeNews-para{
+    width: 60%;
+    color: var(--neutral-600, #525252);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 1.375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2rem; /* 145.455% */
+}
+.homeNews-contents{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.homeNews-content{
+    width: calc(30% - 20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    box-shadow: 10px 10px rgb(255, 250, 250,0.4);
+}
+.homeNews-content img{
+    width: 100%;
+    border-radius: 20px;
+}
+.homeNews-content h3{
+    color: #000;
+    font-family: Poppins;
+    font-size: 1.5625rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.1875rem; /* 140% */
+    text-align: left;
+}
+.homeNews-content p{
+    color: #000;
+    font-family: Poppins;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.75rem; /* 155.556% */
+    text-align: left;
+}
+
+/* Responsiveness -----------------------------> */
+/* @media screen and (max-width:1400px) {
+    .main-homeNews{
+        gap: 50px;
+    }
+    .homeNews-title{
+        font-size: 2.5rem;
+    }
+    .homeNews-para{
+        width: 80%;
+        font-size: 1.2rem;
+    }
+    .homeNews-content h3{
+        font-size: 1.2rem;
+    }
+    .homeNews-content p{
+        font-size: 0.85rem;
+    }
+} */
+@media screen and (max-width:900px){
+    .homeNews-para{
+        width: 100%;
+    }
+    .homeNews-contents{
+        flex-direction: column;
+        gap: 40px;
+    }
+    .homeNews-content{
+        width: 100%;
+        align-items: flex-start;
+    }
+    .homeNews-content img{  
+        height: 20rem;
+    }
+  
+}
+@media screen and (max-width:550px){
+    .main-homeNews{
+        align-items: flex-start !important;
+        gap: 30px;
+    }
+    .homeNews-title{
+        margin-left: 20px;
+        font-size: 1.5rem !important;
+    }
+    .homeNews-para{
+        display: none;
+    }
+    .homeNews-content{
+        padding: 0;
+    }
+    .homeNews-content h3{
+        font-size: 1.125rem !important;
+    }
+    .homeNews-content p{
+        font-size: 1rem !important;
+    }
+}
