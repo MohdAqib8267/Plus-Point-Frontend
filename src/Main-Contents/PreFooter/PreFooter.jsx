@@ -24,7 +24,7 @@ export default function PreFooter(){
                        </p>
                  </div>
                  <div className="pre-right">
-                       <button className="pre-contact">Contact us</button>
+                 <a href="/contact"><button className="pre-contact">Contact Us</button></a>
                  </div>
              </div>
            </motion.div>

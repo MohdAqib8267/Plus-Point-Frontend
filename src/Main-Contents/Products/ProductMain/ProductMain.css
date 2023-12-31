@@ -1,0 +1,106 @@
+.productMain{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.productMain-banner{
+    width: 100%;
+    height: 40rem;
+    background-color: #4C341F;
+    margin-top: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.productMain-banner-title{
+    color: #FFF;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 3.75rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 4.5rem */
+}
+.productMain-info{
+    width: 100%;
+    max-width: 1920px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 5rem;
+    gap: 10px;
+}
+.productMain-title{
+    color: var(--Light-Text-Color-Title, #11142D);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 3.75rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 4.375rem; /* 116.667% */
+}
+.productMain-p{
+    width: 50rem;
+    color: #121212;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.875rem; /* 150% */
+}
+.productMain-images{
+    width: 100%;
+    max-width: 1920px;
+    padding: 0 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items:center;
+}
+
+
+/* responsiveness --------------------> */
+@media screen and (max-width:769px) {
+    .productMain-banner-title{
+        font-size: 2.5rem !important;
+    }
+    .productMain-title{
+        font-size: 2.5rem !important;
+    }
+    .productMain-images{
+        padding: 0 2rem;
+    }
+    .productMain-p{
+        width: 40rem;
+    }
+}
+@media screen and (max-width:480px) {
+      .productMain-images{
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+      }
+      .productMain-banner{
+        height: 30rem;
+        margin-top: 6rem;
+      }
+      .productMain-banner-title{
+        font-size: 2rem !important;
+      }
+      .productMain-p{
+        width: 25rem;
+        font-size: 1rem !important;
+    }
+    .productMain-title{
+        font-size: 1.5rem !important;
+        line-height: 2.5rem;
+    }
+    .productMain-info{
+        padding: 4rem 2rem;
+    }
+}

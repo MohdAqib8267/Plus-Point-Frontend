@@ -1,0 +1,195 @@
+.main-product1{
+    width: 100%;
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.product1-banner{
+    width: 100%;
+    max-width: 1920px;
+    margin-top: 8rem;
+    padding: 4rem 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product1-section1{
+    width: 100%;
+    max-width: 1920px;
+    padding: 4rem 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+}
+.product1-section1-title{
+    color: #191A26;
+    font-family: Poppins;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 3.125rem; /* 125% */
+}
+.product1-section1-img-wrapper{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start !important;
+    align-items: center;
+    gap: 30px;
+}
+.product1-section1-img-wrapper-w{
+    width: calc(32% - 10px);
+    height: 32rem;
+    margin-top: 10px !important;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 1rem 0;
+}
+.product1-section1-img-wrapper-w img{
+    width: 100%;
+    height: 80% !important;
+    object-fit: cover;
+}
+.product1-section1-img-wrapper-w p{
+   font-size: 1.2rem !important;
+}
+
+/* section 3 */
+.product1-section3{
+    width: 100%;
+    max-width: 1920px;
+    padding: 4rem 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.product1-section3-left{
+    width: 28%;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.p-afford{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.p-afford-main{
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.p-afford-title{
+    color: #000;
+    font-family: Poppins;
+    font-size: 1.78406rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.p-afford span{
+     font-size: 1.5rem;
+     margin-top: 0.5rem;
+     cursor: pointer;
+}
+.p-afford-dropDown{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 0.6s ease;
+    overflow: hidden;
+}
+.p-afford-dd-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    color: #797979;
+}
+.p-afford-dd-title{
+    color: #797979;
+    font-family: Poppins;
+    font-size: 1.45969rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 2.27069rem; /* 155.556% */
+}
+.product1-section3-right{
+    width: 68%;
+    min-height: fit-content;
+    padding: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.product1-section3-right img{
+    width: 32%;
+    height: 15rem !important;
+    border-radius: 10px;
+    margin-top: 20px !important;
+    object-fit: cover;
+}
+
+.product1-mob-section3{
+    width: 100%;
+    padding: 2rem;;
+}
+
+@media screen and (max-width:900px) {
+    .product1-banner{
+        margin-top: 6rem !important;
+        padding: 4rem 4rem !important;
+    }
+    .product1-section1{
+        padding: 4rem 4rem !important;
+    }
+    .product1-section1-img-wrapper{
+        gap: 20px;
+    }
+    .product1-section1-img-wrapper img{
+        width: calc(50% - 10px);
+    }
+    .product1-section3{
+        padding: 4rem 4rem !important;
+    }
+}
+@media screen and (max-width:480px) {
+    .product1-banner{
+        margin-top: 6rem !important;
+        padding: 2rem !important;
+    }
+    .product1-section1{
+        padding: 2rem !important;
+        gap: 20px !important;
+    }
+    .product1-section1-img-wrapper{
+        gap: 20px;
+    }
+    .product1-section1-img-wrapper img{
+        width: 100%;
+        height: 20rem !important;
+    }
+    .product1-section3{
+        padding: 2rem !important;
+    }
+    .product1-section1-title{
+        font-size: 1.5rem !important;
+    }
+}

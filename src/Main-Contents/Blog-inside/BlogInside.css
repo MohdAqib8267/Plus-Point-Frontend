@@ -134,7 +134,11 @@
 }  */
 
 
-
+.h-c-b>img{
+    /* height: 15rem; */
+    /* width: 20rem; */
+    height: 18rem;
+}
 .blog-inside-image{
     height: 65vh;
     width: 100%;
@@ -142,11 +146,11 @@
     overflow: hidden;
 }
 
-/* .blog-inside-image>img {
-    border-radius: 10px;
-    height: 25rem;
-
-/* }  */
+.blog-inside-image>img {
+    /* border-radius: 10px;
+    height: 25rem; */
+    width: 100%;
+ } 
 .process-img{
     width: 100%;
 }
@@ -156,6 +160,7 @@
     gap: 4rem;
 
 }
+
 .later-image-1{
     display: flex;
     flex: 1;
@@ -286,10 +291,7 @@
     gap: 0.8rem;
     box-shadow: 1px 1px 1px 1px #F3EEEC;
 }
-.h-c-b>img{
-    /* height: 15rem; */
-    /* width: 20rem; */
-}
+
 .homeNews-content p{
     color: #000;
     font-family: Poppins;

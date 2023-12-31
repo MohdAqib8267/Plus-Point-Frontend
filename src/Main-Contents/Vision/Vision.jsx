@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Vision.css'
 import img from '../../images/vision.png';
 import vision1 from '../../images/vision-1.png';
@@ -6,13 +6,37 @@ import vision2 from '../../images/vision-2.png';
 import Header from '../Header/Header'
 import PreFooter from '../PreFooter/PreFooter'
 import Footer from '../Footer/Footer'
+import axios from 'axios';
 export default function Vision() {
+
+  const ImgURL="http://localhost:1337"
+  const [vision,setVision]=useState(' ');
+useEffect(()=>{
+   
+const baseURL = "http://localhost:1337/api/";
+
+const token = "be70dee855404872b42db9f5550afe676ce5884958a904658fb1e8377071abe9fa038b9431bd4d21fe0b35024762f58082b96f6facb806cbd1038a280ddba9fe52f134786c8aec42e991206ef01f081fa1a309631359f89b5ae7a2d98387e4b3d7dcb07e33a81dc141f7335e5119af17f8dc03ac3fda185a01e6d66b36949152"
+
+   const headers = {
+     Authorization: `Bearer ${token}`,
+   };
+
+    const fetchVision=async()=>{
+      const res = await axios.get(`${baseURL}mission-and-visions?populate=*`,{
+        headers:headers,
+      });
+      console.log(res.data.data);
+      setVision(res.data.data[0]?.attributes);
+    }
+    fetchVision();
+  },[])
   return (
+    
     <>
        <div className="main-vision">
             <Header />
             <div className="vision-banner">
-                <img src={img} alt="" />
+            <img src={`${ImgURL}${vision?.Image?.data?.attributes?.url}`} alt="" />
             </div>
             <div className="vision-text-slide">
             {/* Mission  Vission */}
@@ -36,22 +60,22 @@ export default function Vision() {
                   <div className="vision-content-info">
                     <h3>Our Vision</h3>
                     <p>
-                       There can be nothing more precious, valuable and significant for us than to represent our Industry, and our beloved nation on the Globe. 
-                       At Plus Point, we have a passion to achieve this vision. We believe in our process, and truly stand by it.
+                    <div dangerouslySetInnerHTML={{ __html: vision.Our_Vision}} />
                     </p>
                   </div>
-                  <div className="vision-content-img"><img src={vision1} alt="" /></div>
+                  <div className="vision-content-img"><img src={`${ImgURL}${vision?.Vision_Image?.data?.attributes?.url}`} alt="" /></div>
                     
                </div>
                <div className="vision-content-2">
                   <div className="vision-content-info vision-add">
-                    <h3>Our Mission</h3>
+                    <h3>Our Mission</h3>  
                     <p>
-                     Being in the hardware industry for more than 80 years, we have understood one thing, that is, a customer cannot rely on one single brand for all their hardware needs. 
-                     There is no brand that does it all perfectly. We at Plus Point are here to change that. We are committed to a mission to be Your One Stop Hardware Solution. A solution you can trust and rely on.
+                    <div dangerouslySetInnerHTML={{ __html: vision.Our_Mission}} />
                     </p>
                   </div>
-                  <div className="vision-content-img vision-add2"><img src={vision2} alt="" /></div>      
+                  <div className="vision-content-img vision-add2">
+                  <img src={`${ImgURL}${vision?.Mission_Image?.data?.attributes?.url}`} alt="" />
+                    </div>      
                </div>
                <div className="vision-content-3">
                  <p>“A spirit with a vision, is a dream with a mission.”</p>

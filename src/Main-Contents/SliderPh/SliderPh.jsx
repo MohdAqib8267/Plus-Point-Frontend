@@ -126,7 +126,8 @@ const sliderData=[
     
   ]
 
-const SliderPh = () => {
+const SliderPh = ({timeLineData}) => {
+  const ImgURL="http://localhost:1337"
 
   return (
     
@@ -135,27 +136,29 @@ const SliderPh = () => {
             <TimelineV />
       <div className="sliderPh-container">
         
-      {sliderData.map((data,index)=>{
+      {Array.isArray(timeLineData) && timeLineData.map((data,index)=>{
           return(
             <div className="slide-timeline">
             
             <div className="slide1-ph panel-ph" key={index}>
             <div className="s-left-ph">
-              <h1 className="s-y" >
+              {/* <h1 className="s-y" >
                 {data.heading}
               </h1>
               <span>
                
                  {data.info}
-              </span>
+              </span> */}
+              <div className="s-left-ph1" dangerouslySetInnerHTML={{ __html: data?.attributes?.Year_Information}} />
             </div>
             <div className="s-right-ph">
               <div className="s-img">
-                <img
+                {/* <img
                   width="100%"
                   src={data.img}
                   alt=""
-                />
+                /> */}
+                 <img width="100%" src={`${ImgURL}${data?.attributes?.Image?.data?.attributes?.url}`} alt="" />
               </div>
             </div>
           </div>

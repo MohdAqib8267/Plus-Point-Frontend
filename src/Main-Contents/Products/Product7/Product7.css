@@ -1,0 +1,104 @@
+.main-product7{
+    width: 100%;
+    margin-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1920px;
+}
+.product7-section1{
+    width: 100%;
+    padding: 4rem 8rem;
+}
+
+/* section2 */
+.product7-section2{
+    width: 100%;
+    padding: 4rem 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+}
+.product7-section2-title{
+    color: #191A26;
+    font-family: Poppins;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3.125rem; /* 125% */
+}
+.product7-section2-img{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center !important;
+    align-items: center;
+    gap: 30px;
+}
+.product6-content2-img{
+    width: calc(33% - 30px);
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.product6-content2-img img{
+    width: 100%;
+    border-radius: 10px;
+    height: 70%;
+    object-fit: cover;
+}
+.product6-content2-title{
+    color: #4C341F;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 2.7rem */
+}
+
+@media screen and (max-width:900px) {
+    .main-product7{
+        margin-top: 6rem;
+    }
+    .product7-section1{
+        padding: 4rem !important;
+    }
+    .product7-section2{
+        padding: 4rem !important;
+    }
+    .product7-section2-img{
+        gap: 20px !important;
+    }
+    .product6-content2-img{
+        width: calc(50% - 10px) !important;
+        height: 20rem !important;
+        gap: 20px !important;
+    }
+}
+@media screen and (max-width:480px) {
+    .main-product7{
+        margin-top: 6rem;
+    }
+    .product7-section1{
+        padding: 2rem !important;
+    }
+    .product7-section2{
+        padding: 2rem !important;
+        gap: 20px !important;
+    }
+    .product7-section2-title{
+        font-size: 1.5rem !important;
+    }
+    .product6-content2-img{
+        width: 100% !important;
+        height: 20rem !important;
+        gap: 15px !important;
+    }
+}

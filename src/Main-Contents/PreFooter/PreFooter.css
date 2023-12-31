@@ -90,7 +90,7 @@
         font-size: 1rem;
     }
     .pre-contact{
-        width: 40%;
+        width: 13rem;
         font-size: 1.2rem;
     }
 }
@@ -111,9 +111,9 @@
         justify-content: flex-start;
     }
     .pre-contact{
-        width: 60%;
-        height: 3rem;
-        font-size: 1rem;
+        width: 10rem;
+        height: 4rem;
+        font-size: 1.2rem;
         margin-bottom: 25px;
     }
 }
@@ -141,7 +141,7 @@
         justify-content: flex-start;
     }
     .pre-contact{
-        width: 50%;
+        width: 10rem;
         height: 3rem;
         font-size: 1rem;
         margin-bottom: 25px;

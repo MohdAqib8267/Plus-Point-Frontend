@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './HomeCard.css'
-import trust from '../../../images/trustWhite.svg'
+import trust from '../../../images/white.png'
 import progression from '../../../images/homeWh-2.png'
 import quality from '../../../images/homeWh-3.png'
 

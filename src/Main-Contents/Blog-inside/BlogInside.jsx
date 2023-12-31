@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import Divider from "@mui/material/Divider";
@@ -35,9 +35,61 @@ import PreFooter from "../PreFooter/PreFooter";
 import Footer from "../Footer/Footer";
 import { gsap } from 'gsap'
 import SplitType from 'split-type'
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 const BlogInside = () => {
 
+  const {id}=useParams();
+  // console.log(id);
+
+  const [blog,setBlog]=useState(' ');
+  const [relatedBlogs,setRelatedBlogs]=useState([]);
+  const ImgURL="http://localhost:1337"
+  useEffect(()=>{
+    const baseURL = process.env.REACT_APP_API_URL|| "http://localhost:1337/api";
+   const token = "be70dee855404872b42db9f5550afe676ce5884958a904658fb1e8377071abe9fa038b9431bd4d21fe0b35024762f58082b96f6facb806cbd1038a280ddba9fe52f134786c8aec42e991206ef01f081fa1a309631359f89b5ae7a2d98387e4b3d7dcb07e33a81dc141f7335e5119af17f8dc03ac3fda185a01e6d66b36949152"
+  
+  
+    const headers = {
+      Authorization: `Bearer ${token}`,
+    };
+    
+    const fetchBlog=async()=>{
+      const res= await axios.get(`http://localhost:1337/api/blog-insides/${id}?populate=*`,{
+        headers:headers,    
+      }) 
+      
+      // console.log(res.data.data?.attributes);   
+      setBlog(res.data.data?.attributes);
+    };
+    console.log(blog);
+
+    const fetchRelatedBlogs = async () => {
+      try {
+        const res = await axios.get('http://localhost:1337/api/blog-insides?populate=*', {
+          headers: headers,
+        });
+    
+        const data = res?.data?.data || [];
+        
+        const related = data.filter(item => {
+          const tags = item?.attributes?.Tags;
+          return item.id != id && tags.includes(blog?.Tags);
+        });
+    
+        setRelatedBlogs(related.slice(0, 3)); // Assuming you want to display only the first 3 related blogs
+      } catch (error) {
+        console.error('Error fetching related blogs:', error);
+      }
+    };
+    
+     
+    fetchBlog();
+    fetchRelatedBlogs();  
+  },[id,blog?.Tags]);  
+
+  console.log(relatedBlogs);
   useLayoutEffect(()=>{
     const ourText = new SplitType('.t-h', { types: 'chars' })
     const chars = ourText.chars
@@ -58,6 +110,7 @@ const BlogInside = () => {
       }
     )
   },[])  
+  
   const profiles = [
     {
       img: "data:image/jpeg;base64,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",
@@ -104,6 +157,7 @@ const BlogInside = () => {
           >
             How to select the best material for your door <br /> hardware?
             Here’s a guide.
+            
           </h1>
         </div>
         <div className="container">
@@ -134,7 +188,8 @@ const BlogInside = () => {
                     viewport={{ once: true }}
                     className=" blog-inside-image"
                   >
-                    <img width="100%" height="100%" src={item.img} alt="" />
+                    {/* <img width="100%" height="100%" src={item.img} alt="" /> */}
+                    <img src={`${ImgURL}${blog?.Image?.data?.attributes?.url}`} alt="" />
                   </motion.div>
                   <motion.div
                     initial={{ y: "5rem" }}
@@ -147,30 +202,9 @@ const BlogInside = () => {
                     viewport={{ once: true }}
                     className="process-info"
                   >
-                    <div
-                      style={{ fontSize: "1.5rem" }}
-                      className="process-info-upper"
-                    >
-                      {item.heading}
-                    </div>
-                    <div className="process-info-bottom">{item.info}</div>
-                    <br />
-                    <div className="process-info-bottom">
-                      It was popularised in the 1960s with the release of
-                      Letraset sheets containing Lorem Ipsum passages, and more
-                      recently with desktop publishing software like Aldus
-                      PageMaker including versions of Lorem Ipsum.
-                      <br />
-                      <br />
-                      Contrary to popular belief, Lorem Ipsum is not simply
-                      random text. It has roots in a piece of classical Latin
-                      literature from 45 BC, making it over 2000 years old.
-                      Richard McClintock, a Latin professor at Hampden-Sydney
-                      College in Virginia, looked up one of the more obscure
-                      Latin words, consectetur, from a Lorem Ipsum passage, and
-                      going through the cites of the word in classical
-                      literature, discovered the undoubtable source.
-                    </div>
+                    
+
+                    <div dangerouslySetInnerHTML={{ __html: blog.Information_Container1}} />
                   </motion.div>
 
                   <motion.div
@@ -184,21 +218,15 @@ const BlogInside = () => {
                     viewport={{ once: true }}
                     className=" later-images"
                   >
-                    <div className="later-image-1">
-                      <img
-                        style={{ width: "100%", height: "auto" }}
-                        src={l1}
-                        alt=""
-                      />
-                    </div>
 
-                    <div className="later-image-2">
-                      <img
-                        style={{ width: "100%", height: "auto" }}
-                        src={l2}
-                        alt=""
-                      />
-                    </div>
+                    {
+                      Array.isArray(blog?.Other_Images?.data) && blog?.Other_Images?.data.map((item, i) => (
+                        <div className={`later-image-${i + 1}`} key={i}>
+                          <img style={{ width: "100%", height: "auto" }} src={`${ImgURL}${item?.attributes?.url}`} alt="" />
+                        </div>
+                      ))
+                    }
+                   
                   </motion.div>
 
                   <motion.div
@@ -212,30 +240,9 @@ const BlogInside = () => {
                     viewport={{ once: true }}
                     className="process-info"
                   >
-                    <div
-                      style={{ fontSize: "1.5rem" }}
-                      className="process-info-upper "
-                    >
-                      Where can I get some?
-                    </div>
-                    <div className="process-info-bottom">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, when an unknown
-                      printer took a galley of type and scrambled it to make a
-                      type specimen book. It has survived not only five
-                      centuries, but also the leap into electronic typesetting,
-                      remaining essentially unchanged. It was popularised in the
-                      1960s
-                      <br />
-                      <br />
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, when an unknown
-                      printer took a galley of type and scrambled it to make a
-                      type specimen book. It has survived not only five
-                      centuries, but also the leap into electronic typesetting,
-                    </div>
+                    
+                     <div dangerouslySetInnerHTML={{ __html: blog.Information_Container2}} />
+
                   </motion.div>
                   {/* <button className="s-m-btn">See More</button> */}
                 </div>
@@ -353,7 +360,7 @@ const BlogInside = () => {
                       key={i}
                     >
                       <div
-                        className="process-img cmt-img"
+                        className=" cmt-img"
                         style={{ width: "auto", display: "flex", gap: "1rem" }}
                       >
                         <img width="100%" src={item.img} alt="" />
@@ -504,7 +511,7 @@ const BlogInside = () => {
                 View More <ArrowForward />
               </div>
             </motion.div>
-
+              
             <motion.div
             initial={{ y: "5rem" }}
             whileInView={{ y: 0,  }}
@@ -523,8 +530,45 @@ const BlogInside = () => {
                 }}
                 className="homeNews-contents "
               >
-                <div className="homeNews-content h-c-b">
-                  <img src={Home1} alt="" />
+
+                {
+                  relatedBlogs.slice(0,3).map((item,i)=>{
+                    const relate=item?.attributes;
+                    return(
+                      <div className="homeNews-content h-c-b">
+
+                
+                      {/* <img src={Home1} alt="" /> */}
+                      <img style={{ width: "100%" }} src={`${ImgURL}${relate?.Image?.data?.attributes?.url}`} alt="" />
+     
+                      <div className="b-info">
+                        <div
+                          style={{
+                            fontWeight: "bold",
+                            textAlign: "left",
+                            color: "#1F1F1F",
+                            fontSize: "1.3rem",
+                          }}
+                        >
+                          <div dangerouslySetInnerHTML={{ __html: relate?.Heading}} />
+                        </div>
+                        <br />
+                        <div
+                          style={{
+                            textAlign: "left",
+                            color: "rgba(96, 96, 96, 1)",
+                          }}
+                        >
+                         <div dangerouslySetInnerHTML={{ __html: truncate(relate?.Blog_Content,{length:200})}} />
+                        </div>
+                      </div>
+                    </div>
+                    )
+                  })  
+                }
+               
+                {/* <div className="homeNews-content h-c-b">
+                  <img style={{ width: "100%" }} src={`${ImgURL}${relatedBlogs[1]?.attributes?.Image?.data?.attributes?.url}`} alt="" />
                   <div className="b-info">
                     <div
                       style={{
@@ -534,7 +578,7 @@ const BlogInside = () => {
                         fontSize: "1.3rem",
                       }}
                     >
-                      Lorem Ipsum is simply dummy text of the printing
+                      <div dangerouslySetInnerHTML={{ __html: relatedBlogs[1]?.attributes?.Heading}} />
                     </div>
                     <br />
                     <div
@@ -543,24 +587,22 @@ const BlogInside = () => {
                         color: "rgba(96, 96, 96, 1)",
                       }}
                     >
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy{" "}
+                     <div dangerouslySetInnerHTML={{ __html: truncate(relatedBlogs[1]?.attributes?.Blog_Content,{length:200})}} />
                     </div>
                   </div>
-                </div>
-                <div className="homeNews-content h-c-b">
-                  <img src={Home2} alt="" />
+                </div> */}
+                {/* <div className="homeNews-content h-c-b">
+                 <img style={{ width: "100%"}} src={`${ImgURL}${relatedBlogs[2]?.attributes?.Image?.data?.attributes?.url}`} alt="" />
                   <div className="b-info">
                     <div
                       style={{
                         fontWeight: "bold",
                         textAlign: "left",
                         color: "#1F1F1F",
-                        fontSize: "1.3rem",
+                        fontSize: "1.3rem",  
                       }}
                     >
-                      Lorem Ipsum is simply dummy text of the printing
+                       <div dangerouslySetInnerHTML={{ __html: relatedBlogs[2]?.attributes?.Heading}} />
                     </div>
                     <br />
                     <div
@@ -569,38 +611,10 @@ const BlogInside = () => {
                         color: "rgba(96, 96, 96, 1)",
                       }}
                     >
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy{" "}
+                       <div dangerouslySetInnerHTML={{ __html: truncate(relatedBlogs[2]?.attributes?.Blog_Content,{length:200})}} />
                     </div>
                   </div>
-                </div>
-                <div className="homeNews-content h-c-b">
-                  <img src={Home3} alt="" />
-                  <div className="b-info">
-                    <div
-                      style={{
-                        fontWeight: "bold",
-                        textAlign: "left",
-                        color: "#1F1F1F",
-                        fontSize: "1.3rem",
-                      }}
-                    >
-                      Lorem Ipsum is simply dummy text of the printing
-                    </div>
-                    <br />
-                    <div
-                      style={{
-                        textAlign: "left",
-                        color: "rgba(96, 96, 96, 1)",
-                      }}
-                    >
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy{" "}
-                    </div>
-                  </div>
-                </div>
+                </div> */}
               </div>
             </motion.div>
           </div>

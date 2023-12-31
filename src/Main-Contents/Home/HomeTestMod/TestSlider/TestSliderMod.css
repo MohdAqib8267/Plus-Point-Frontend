@@ -1,0 +1,122 @@
+.testSlider-bgimg {
+    display: block;
+    width: 90%;
+    height: 60%;
+    position: relative;
+  }
+  .testSlider-img{
+     width: 100%;
+     height: 100%;
+     z-index: 0;
+     border-radius: 10px;
+  }
+  .pauseBtn{
+    width: 3.9375rem;
+    height: 3.91031rem;
+    flex-shrink: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 99;
+  }
+  .testSlider-name{
+    color: #FFF;
+    width: 100%;
+    font-family: Poppins;
+    font-size: 1.375rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.375rem; /* 100% */
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .testSlider-place{
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1rem; /* 100% */
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .testSlider-gradient{
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.00) 100%);
+    position: absolute;
+    bottom: 0;
+    transform: rotate(180deg);
+  }
+  .testSlider-content{
+    width: 100%;
+    padding: 0 1rem;
+    min-height: 28rem;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 1.47694rem;
+    background: #FFF;
+    gap: 20px;
+    box-shadow: 0px 0px 74.62041px 0px rgba(0, 0, 0, 0.10);
+    transform: scale(0.8);
+    transition: transform 300ms;
+    opacity: 0.8;
+  }
+  .activeSlide{
+    transform: scale(1);
+    opacity: 1;
+  }
+  .testSlider-content p{
+    color: #000;
+    font-family: Poppins;
+    font-size: 1.3325rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 1.99875rem */
+    letter-spacing: 0.00669rem;
+  }
+
+
+  .slick-slide > div{
+    margin: 0;  
+  }
+  .slick-list{
+    min-height: 30rem;
+    padding: 20px 10px;
+  }
+
+  @media screen and (max-width:1550px) {
+    .testSlider-content p{
+      font-size: 1.2rem;
+    }
+    .homeTestMod-info{
+      font-size: 1.2rem !important;
+    }
+  }
+
+  @media screen and (max-width:480px) {
+     .testSlider-content{
+      min-height: 22rem;
+      padding: 0.5rem;
+     }
+     .slick-list{
+      min-height: 25rem;
+     }
+    .testSlider-name{
+      width: 100%;
+      font-size: 1rem;
+    }
+    .testSlider-place{
+      font-size: 0.8rem;
+    }
+    .testSlider-content p{
+      font-size: 1rem;
+    }
+  }

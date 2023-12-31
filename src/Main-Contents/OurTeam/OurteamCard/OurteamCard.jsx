@@ -3,6 +3,8 @@ import img from '../../../images/OurTeamBanner.png';
 import './OurteamCard.css';
 import {motion} from 'framer-motion';
 export default function OurteamCard(props) {
+  // console.log(props)
+  const ImgURL = "http://localhost:1337";
   return (
     <>
        <motion.div 
@@ -15,18 +17,21 @@ export default function OurteamCard(props) {
         }}
         viewport={{once:true}}
        className="our-team-card">
-            <div className='our-team-card-img'><img src={props.img} alt=""/></div>
+            <div className='our-team-card-img'><img src={`${ImgURL}${props?.img?.data?.attributes?.url}`} alt="" /></div>
              
           <div className="our-team-card-Tpost">
             <h3 className="our-team-card-name">
-                    {props.name}
+            <div dangerouslySetInnerHTML={{ __html: props?.name}} />
+                    
             </h3>
             <h5 className="our-team-card-post">
-                   {props.post}
+            <div dangerouslySetInnerHTML={{ __html: props?.post}} />
+                  
             </h5>
           </div>
           <div className="our-team-card-info">
-              {props.info}
+          <div dangerouslySetInnerHTML={{ __html: props?.info}} />
+              
           </div>
        </motion.div>
     </>

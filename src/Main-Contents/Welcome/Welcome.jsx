@@ -150,8 +150,41 @@ import PreFooter from "../PreFooter/PreFooter";
 import Footer from "../Footer/Footer";
 import SliderPh from "../SliderPh/SliderPh";
 import TimelineV from '../Timeline/TimelineV';
+import axios from "axios";
 const Welcome = () => {
   const [seeContent,setSeeContent]=useState(true);
+  const [about,setAbout]=useState(' ');
+  const [timeLineData,setTimeLineData]=useState(' ');
+
+  const ImgURL="http://localhost:1337"
+
+  useEffect(()=>{
+    const baseURL = process.env.REACT_APP_API_URL|| "http://localhost:1337/api/";
+    const token = "be70dee855404872b42db9f5550afe676ce5884958a904658fb1e8377071abe9fa038b9431bd4d21fe0b35024762f58082b96f6facb806cbd1038a280ddba9fe52f134786c8aec42e991206ef01f081fa1a309631359f89b5ae7a2d98387e4b3d7dcb07e33a81dc141f7335e5119af17f8dc03ac3fda185a01e6d66b36949152"
+   
+     const headers = {
+       Authorization: `Bearer ${token}`,
+     };
+
+     const fetchAbout=async()=>{
+      const res= await axios.get(`${baseURL}abouts?populate=*`,{
+        headers:headers,
+      })
+      // console.log(res.data.data);
+      setAbout(res.data.data[0].attributes);
+    
+    }   
+
+    const fetchTimeLine=async()=>{
+      const res= await axios.get(`${baseURL}abouts?populate[about_timelines][populate]=*`,{
+        headers:headers,
+      })
+      // console.log(res.data.data);
+      setTimeLineData(res.data.data[0].attributes?.about_timelines?.data);
+    }
+    fetchAbout();
+    fetchTimeLine();
+  },[]);
   const handleSeeMore=()=>{
     setSeeContent((prev)=>!prev);
   }
@@ -163,6 +196,7 @@ const Welcome = () => {
       <div className="top-sec">
         <div className="top-image welcome-image">
           <img width="100%" height="100%" src={Exp1} />
+          {/* <img width="100%" height="100%" src={`${ImgURL}${about?.Image?.data?.attributes?.url}`} alt="" /> */}
         </div>
       </div>
       <div className="container-welcome ">
@@ -185,8 +219,10 @@ const Welcome = () => {
               <br />
               <span style={{ color: "#4C341F" }}>Plus Point</span>
             </h1>
+            {/* <div dangerouslySetInnerHTML={{ __html: about.Heading}} /> */}
           </div>
-          <div className="right-pp">
+          <div className="right-pp">   
+          {/* <div dangerouslySetInnerHTML={{ __html: about?.Information}} /> */}
             <div
               style={{
                 color: "#1F1F1F",
@@ -209,8 +245,8 @@ const Welcome = () => {
               the brothers. Back then, one could never think what this journey
               could turn out to be like. But we worked. We worked in a
               relentless pursuit of perfection.
-            </div>
-            <div>
+            </div> 
+             <div>
               <button onClick={handleSeeMore} className="s-m-btn">{seeContent?"See Less":"See More"}</button>
             </div>
             {seeContent?
@@ -242,8 +278,8 @@ const Welcome = () => {
         </motion.div> 
        </div>
         
-          <Slider />
-        <SliderPh/>
+          <Slider timeLineData={timeLineData}/>
+        <SliderPh timeLineData={timeLineData}/>
         
            
        <div className="iso">

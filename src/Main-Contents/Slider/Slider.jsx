@@ -15,7 +15,8 @@ import TimelineObserver from "react-timeline-animation";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Slider() {
+export default function Slider({timeLineData}) {
+  console.log(timeLineData);
   const [width, setWidth] = useState(0);
   const [shouldIncrement, setShouldIncrement] = useState(true);
   const intermediaryBalls = 5;
@@ -23,6 +24,7 @@ export default function Slider() {
 
   const component = useRef();
   const slider = useRef();
+  const ImgURL="http://localhost:1337"
 
   const sliderData = [
     {
@@ -252,7 +254,45 @@ export default function Slider() {
   return (
     <div className="Slider m-w-c" ref={component}>
       <div ref={slider} className="container-slide">
-        {sliderData.map((data, index) => {
+        { Array.isArray(sliderData) && sliderData?.map((data, index) => {   
+          return (
+            <div className="opq">
+              <div className="slide1 panel" key={index}>
+                <div className="ijk">
+                  <div className="s-left">
+                    <h1
+                      className="s-y"
+                      style={{ color: "#4C341F", fontSize: "3rem" }}
+                    >
+                      {data.heading}
+                    </h1>
+                    <span style={{ textAlign: "justify" }}>{data.info}</span>
+                    {/* <div dangerouslySetInnerHTML={{ __html: data?.attributes?.Year_Information}} /> */}
+                  </div>
+                  <div className="s-right">
+                    <div className="s-img">
+                      <img width="100%" src={data.img} alt="" />
+                      {/* <img width="100%" src={`${ImgURL}${data?.attributes?.Image?.data?.attributes?.url}`} alt="" /> */}
+                    </div>
+                  </div>
+                </div>
+                <div className="timeline2 " >
+                  <div className="timeline_progress"></div>
+                  <ul class="years">
+
+                    <li data-position="2" class="year year--highlight">
+                      <span class="year__value">
+                      {/* <div dangerouslySetInnerHTML={{ __html: data?.attributes?.Year}} /> */}
+                        {parseInt(data.heading.props.children[0].trim(), 10)}
+                      </span> 
+                    </li>
+                  </ul>   
+                </div>
+              </div>
+            </div>
+          );
+        })}
+        {/* {sliderData.map((data, index) => {
           return (
             <div className="opq">
               <div className="slide1 panel" key={index}>
@@ -287,7 +327,7 @@ export default function Slider() {
               </div>
             </div>
           );
-        })}
+        })} */}
          
       </div>
      

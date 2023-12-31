@@ -96,7 +96,10 @@
     line-height: 150%; /* 1.99875rem */
     letter-spacing: 0.00669rem;
   }
-
+  .slick-slide > div{
+    margin: 0 10px;
+    height: 20rem;
+  }
     /* Responsiveness ----------------------------------> */
 @media screen and (max-width:480px) {
   .swiper{

@@ -1,0 +1,52 @@
+.main-Pcard{
+    width: calc(33% - 20px);
+    height: 35rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #4C341F;
+    margin: 40px 0;
+    cursor: pointer;
+}
+.main-Pcard img{
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.Pcard-title{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%; /* 3rem */
+    border-radius: 10px;
+}
+
+@media screen and (max-width:769px) {
+    .main-Pcard{
+        width: calc(50% - 10px);
+    }
+    .Pcard-title{
+        font-size: 1.5rem;
+    }
+}
+@media screen and (max-width:480px) {
+    .main-Pcard{
+        width: calc(100%);
+        height: 30rem;
+        margin: 0;
+    }
+    .Pcard-title{
+        font-size: 1.5rem;
+    }
+}

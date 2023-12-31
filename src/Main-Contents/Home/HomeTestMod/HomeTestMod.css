@@ -7,7 +7,7 @@
     align-items: center;
     gap: 2.5rem;
     position: relative;
-    padding: 5rem 10rem;
+    
     padding-bottom: 0 !important;
     margin-bottom: -30px;
 }
@@ -29,12 +29,15 @@
     font-weight: 400;
     line-height: 2rem; /* 145.455% */
 }
+.homeTestMod-content{
+    width: 100%;
+}
 
 
 /* Responsiveness ----------------------------------> */
 @media screen and (max-width:480px) {
     .main-homeTestMod{
-        padding: 0 2rem;
+        padding: 0 1rem;
     }
     .homeTestMod-title{
         font-size: 1.7rem;

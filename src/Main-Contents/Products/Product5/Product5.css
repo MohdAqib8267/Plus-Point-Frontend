@@ -1,0 +1,215 @@
+.main-product5{
+    width: 100vw;
+    margin-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.product5-topbanner{
+    width: 100%;
+    height: 38rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4C341F;
+    /* margin-top: 8rem; */
+}
+.product5-title{
+    color: #FFF;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 3.75rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 4.5rem */
+}
+.product5-midbanner{
+    width: 100%;
+    max-width: 1920px;
+    padding: 4rem 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.product5-midbanner-title{
+    color: #4C341F;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 3.75rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 4.5rem */
+}
+.midbanner-line{
+    width: 15rem;
+    height: 0.5rem;
+    background-color: #4C341F;
+}
+.product5-banner{
+    width: 100%;
+    max-width: 1920px;
+    padding: 2rem 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product5-colors{
+    width: 100%;
+    max-width: 1920px;
+     padding: 4rem 8rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.product5-colors-wrapper{
+    width: 44.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: #EEE;
+    padding: 1rem 0;
+}
+.product5-color-title{
+    color: #1F1E01;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 1.375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 1.65rem */
+}
+.product5-color-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.product5-color{
+    width: 25%;
+    height: 2rem;
+}
+
+/* section1 */
+.product5-section1{
+    width: 100%;
+    max-width: 1920px;
+    padding: 4rem 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5rem;
+}
+.product5-section1-title{
+    color: #191A26;
+    font-family: Poppins;
+    font-size: 3.75rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 3.125rem; /* 83.333% */
+}
+.product5-section1-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.product5-section1-left{
+    width: calc(50% - 20px);
+    height: 42rem;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+}
+.product5-section1-left img{
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.product5-section1-right{
+    width: calc(50% - 20px);
+    height: 42rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+.product5-section1-right img{
+    width: calc(50% - 10px);
+    height: calc(50% - 10px);
+    object-fit: cover;
+}
+
+@media screen and (max-width:900px) {
+    .product5-midbanner{
+        padding: 4rem !important;
+    }
+    .product5-banner{
+        padding: 4rem !important;
+    }
+    .product5-mob-banner{
+        padding: 4rem !important;
+    }
+    .product5-colors{
+        padding: 1rem 0 !important;
+    }
+    .product5-colors-wrapper{
+        width: 100%;
+    }
+    .product5-section1{
+        padding: 4rem !important;
+    }
+    .product5-section1-wrapper{
+        flex-direction: column;
+        gap: 30px;
+    }
+    .product5-section1-left{
+        width: 100%;
+    }
+    .product5-section1-right{
+        width: 100%;
+    }
+}
+@media screen and (max-width:480px){
+    .product5-topbanner{
+        height: 20rem;
+    }
+    .product5-title{
+        width: 20rem;
+        font-size: 2.5rem;
+    }
+    .product5-midbanner-title{
+        font-size: 2.2rem;
+    }
+    .midbanner-line{
+        width: 35%;
+    }
+    .product5-midbanner{
+        padding: 2rem !important;
+    }
+    .product5-banner{
+        padding: 2rem !important;
+    }
+    .product5-mob-banner{
+        padding: 2rem !important;
+    }
+    .product5-section1{
+        padding: 2rem !important;
+        padding-top: 0 !important;
+        gap: 20px;
+    }
+    .product5-section1-title{
+        font-size: 1.5rem !important;
+    }
+    .product5-section1-left{
+        height: 25rem;
+    }
+    .product5-section1-right{
+        height: 25rem;
+    }
+}
